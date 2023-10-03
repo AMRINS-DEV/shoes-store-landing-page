@@ -1,0 +1,574 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #333;
+}
+@font-face {
+  font-family: 'monument';
+  src: url(../assets/font/MonumentExtended-Regular.otf);
+}
+@font-face {
+    font-family: 'Inter';
+    src: url(../assets/font/Inter-VariableFont_slnt\,wght.ttf);
+}
+html {
+    scroll-behavior: smooth;
+}
+:root {
+    --color-g: #fbb239;
+    --color-o: #fd5545;
+    --color-l: #f0f0f0;
+    --font-main: 'monument';
+    --font-sec: 'Inter'
+}
+
+#nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+#nav ul
+{
+    display: flex;
+    list-style: none;
+    gap: 0 30px;
+}
+#nav ul li a {
+    text-decoration: none;
+    font-family: var(--font-sec);
+}
+#nav ul li a.activeLink
+{
+    color: var(--color-g);
+}
+.icons {
+    display: flex;
+    gap: 0 20px;
+}
+.icons div {
+    cursor: pointer;
+}
+
+/* header */
+#header
+{
+    display: flex;
+    margin-top: 50px;
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    margin: 50px auto;
+}
+header::after
+{
+    content: 'NIKE';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: .2;
+    z-index: -1;
+    font-family: var(--font-main);
+    color:  var(--color-o);
+    font-size: 23rem;
+    letter-spacing: 50px;
+}
+#header .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#header .left .info h1
+{
+    font-family: var(--font-main);
+    color: #000;
+    font-size: 3rem;
+    line-height: 1.4;
+    font-weight: 900;
+    letter-spacing: 5px;
+}
+#header .left .info h1 span
+{
+    color: var(--color-o);
+    border: 1px solid;
+    padding: 0 10px;
+    position: relative;
+}
+#header .left .info h1 span::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-o);
+    z-index: 22;
+}
+#header .left .info h1 span::before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-o);
+    z-index: 22;
+}
+
+#header .left .info p {
+    font-family: var(--font-sec);
+    margin: 40px 0;
+}
+
+#header .left .info button
+{
+    width: 150px;
+    height: 50px;
+    background-color: var(--color-o);
+    color: #fff;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+#header .left .info button i {
+    color: #fff;
+    padding: 0 10px;
+}
+#header .offers
+{
+    display: flex;
+    gap: 0 20px;
+    margin-top: 60px;
+}
+#header .offers article 
+{
+    background: #000;
+    border-radius: 10px;
+    height: 100px;
+    padding: 10px;
+    width: 240px;
+    display: flex;
+}
+
+#header .offers article .a-left {
+    width: 80px;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-l);
+    border-radius: 10px;
+}
+#header .offers article .a-left div img {
+    width: 100%;
+    transform: rotate(-40deg);
+}
+#header .offers article .a-right
+{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#header .offers article .a-right h3
+{
+    font-size:  .6rem;
+    font-weight: 900;
+    font-family: var(--font-sec);
+    color: #fff;
+
+}
+
+#header .offers article .a-right p
+{
+    font-size: .7rem;
+    font-family: var(--font-sec);
+    color: grey;
+}
+#header .offers article .a-right p i
+{
+    color: grey;
+}
+#header .offers article .a-right h4
+{
+    font-size: .6rem;
+    font-family: var(--font-sec);
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+#header .offers article .a-right h4 i,
+#header .offers article .a-right h4 span
+{
+    color: #fff;
+}
+#header .offers article .a-right h5
+{
+    color: rgb(221, 221, 221);
+    font-family: var(--font-sec);
+    font-size: .6rem;
+}
+#header .offers article .a-right h2
+{
+    color: var(--color-g);
+    font-family: var(--font-sec);
+    font-size: .8rem;
+}
+/* =============================== */
+/* ============================================== */
+/* ============ Slider styling start ============ */
+
+#header .slide {
+    display: flex;
+    width: fit-content;
+    overflow: hidden;
+    align-items: flex-end;
+}
+
+#header .slide .bigImg {
+    position: relative;
+}
+
+#header .slide .bigImg .btns {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    position: absolute;
+    z-index: 111;
+    right: 0;
+    bottom: 0;
+    width: 160px;
+}
+
+#header .slide .bigImg .btns button {
+    width: 50px;
+    height: 40px;
+    border: none;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: none;
+}
+#header .slide .bigImg .btns button i{
+    color: var(--color-g);
+}
+#header .slide .mainSheo {
+    height: 500px;
+    min-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+#header .slide .mainSheo img {
+    animation: scallAnimation 1s ease-in-out;
+    width: 500px;
+    transform: rotate(-40deg) scale(1.1);
+    filter: drop-shadow(10px 10px 20px rgba(3, 3, 3, 0.308));
+}
+
+#header .slide .imgHolderWrapper {
+    display: flex;
+    max-width: 300px;
+}
+
+#header .slide .imgHolder {
+    width: 100px;
+    height: 100px;
+    margin: 0 10px;
+}
+
+#header .slide .imgHolder img {
+    width: 100px;
+    transform: rotate(-40deg);
+}
+
+#header .slide .fromRightAnimation {
+    animation: fromRightAnimation .3s linear;
+}
+
+#header .slide .fromLeftAnimation {
+    animation: fromLeftAnimation .3s linear;
+}
+
+#header .slide .mainSheo .scallAnimation {
+    animation: scallAnimation 1s ease-in-out;
+}
+
+/* ==================== Slider Animation ===================== */
+@keyframes fromRightAnimation {
+    0% {
+        transform: translate(100px) rotate(-40deg);
+    }
+}
+
+@keyframes fromLeftAnimation {
+    0% {
+        transform: translate(-100px) rotate(-40deg);
+    }
+}
+
+@keyframes scallAnimation {
+    0% {
+        transform: scale(.2) rotate(-40deg);
+    }
+}
+
+/* ============= Slider styling end ============= */
+/* ============================================== */
+
+#services-section
+{
+    margin-top: 100px;
+    background-color: var(--color-l);
+}
+#services-section > div 
+{
+    width: 90%;
+    margin: auto;
+}
+#services-section h1
+{
+    font-size: 2rem;
+    font-weight: 200;
+    font-family: var(--font-main);
+    text-align: center;
+    padding: 50px;
+}
+#services-section h1 span {
+    color: var(--color-o);
+}
+#services-section .services
+{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 50px;
+    flex-wrap: wrap;
+    gap: 20px 0;
+}
+#services-section article 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    border-radius: 10px;
+    background-color: #fff;
+    height: 330px;
+    justify-content: center;
+}
+#services-section article .img
+{
+    width: 100px;
+    height: 100px;
+    background: var(--color-l);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+#services-section article .img i
+{
+    font-size: 3rem;
+}
+#services-section article h2
+{
+    color: var(--color-g);
+    font-family: var(--font-main);
+    font-size: .9rem;
+    font-weight: 100;
+    padding: 20px 0;
+}
+#services-section article p
+{
+    font-family: var(--font-sec);
+    line-height: 2;
+    font-size: .8rem;
+    text-align: center;
+}
+#services-section article svg
+{
+    width: 50px;
+}
+/* ===================================== */
+#collection-section 
+{
+    width: 90%;
+    margin: auto;
+}
+#collection-section > h1
+{
+    font-size: 2rem;
+    font-family: var(--font-main);
+    text-align: center;
+    padding: 50px;
+}
+#collection-section > h1 span
+{
+    color: var(--color-o);
+    letter-spacing: 3px;
+}
+#collection-section > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px ;
+}
+#collection-section article
+{
+    min-width: 250px;
+}
+#collection-section article .top
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F6F6F6;
+}
+#collection-section .top img
+{
+    width: 200px;
+}
+#collection-section article .top h2
+{
+    font-family: var(--font-main);
+    padding-bottom: 10px;
+    font-size: .9rem;
+    font-weight: 100;
+}
+#collection-section article .top h2 span,
+#collection-section article .top h2 span i
+{
+    color: var(--color-o);
+    font-size: .6rem;
+}
+
+#collection-section article .title h1{
+    text-align: center;
+    padding: 10px 0;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    font-weight: 100;
+    position: relative;
+}
+#collection-section article .title h1::after
+{
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 170px;
+    height: 2px;
+    background-color: rgb(59, 59, 59);
+    bottom: -5px;
+    border-radius: 5px;
+}
+
+/* ================== */
+#footer  {
+    width: 90%;
+    margin: 150px auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px 0;
+    flex-wrap: wrap;
+}
+#footer svg
+{
+    width: 100px;
+}
+#footer p
+{
+    font-family: var(--font-sec);
+    line-height: 2;
+    font-size: .8rem;
+    font-weight: 600;
+    color: rgb(73, 73, 73);
+    padding: 20px 0;
+}
+#footer .icons 
+{
+    display: flex;
+}
+a {
+    text-decoration: none;
+}
+#footer .icons span
+{
+    background-color: var(--color-o);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#footer .icons span i{
+    color: #fff;
+    font-size: 20px;
+}
+#footer .list
+{
+    display: flex;
+    gap: 0 100px;
+}
+#footer ul
+{
+    list-style: none;
+}
+
+#footer ul h1
+{
+    font-family: var(--font-main);
+    font-weight: 100;
+    font-size: 20px;
+}
+#footer ul li
+{
+    font-family: var(--font-sec);
+    line-height: 2.4;
+    cursor: pointer;
+}
+.copyright
+{
+    padding: 20px 0;
+    border-top: 2px solid grey;
+    font-family: var(--font-sec);
+    text-align: center;
+    position: relative;
+}
+.copyright button
+{
+    width: 50px;
+    height: 50px;
+    background: var(--color-o);
+    color: #fff;
+    font-size: 40px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: -52px;
+    
+}
+.copyright button i
+{
+    color: #fff;
+}
+
+@media only screen and (max-width: 500px) {
+    #nav ul {
+        display: none;
+    }
+    #header .right .slide {
+        display: none;
+    }
+}
